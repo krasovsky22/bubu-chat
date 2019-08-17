@@ -2,7 +2,7 @@ import { Container, Content, ListItem, Text } from "native-base";
 import React, { Component } from "react";
 import { Image } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-const routes = [{ key: 1, route: "Home" }, { key: 2, route: "Profile" }];
+const routes = [{ key: "1", route: "Home" }, { key: "2", route: "Profile" }];
 
 export default class SideBar extends Component {
   render() {
@@ -36,15 +36,17 @@ export default class SideBar extends Component {
             }}
           />
           <FlatList
-            dataArray={routes}
+            data={routes}
             contentContainerStyle={{ marginTop: 120 }}
-            renderRow={({ route }) => {
+            renderItem={({ item }) => {
+              console.log("asdasd", item.route);
               return (
                 <ListItem
+                  id={item.key}
                   button
-                  onPress={() => this.props.navigation.navigate(route)}
+                  onPress={() => this.props.navigation.navigate(item.route)}
                 >
-                  <Text>{route}</Text>
+                  <Text>{item.route}</Text>
                 </ListItem>
               );
             }}
