@@ -2,8 +2,6 @@ module.exports = function(api) {
   api.cache(true);
   return {
     plugins: [
-      ["@babel/plugin-proposal-decorators", { legacy: true }],
-      "@babel/plugin-proposal-class-properties",
       "@babel/plugin-syntax-dynamic-import",
       "babel-plugin-styled-components",
       [
