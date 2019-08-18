@@ -39,7 +39,6 @@ export default class SideBar extends Component {
             data={routes}
             contentContainerStyle={{ marginTop: 120 }}
             renderItem={({ item }) => {
-              console.log("asdasd", item.route);
               return (
                 <ListItem
                   id={item.key}

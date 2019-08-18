@@ -3,12 +3,16 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import React, { Component } from "react";
-import AppNavigation from "./src/HomeScreen/index.js";
+import AppNavigation from "@screens";
+import { RootStore } from "@stores/RootStore.js";
+import { Provider } from "mobx-react";
 
 class AwesomeApp extends Component {
   state = {
     isReady: false
   };
+
+  rootStore = RootStore.create({});
 
   async componentDidMount() {
     await this._loadResourcesAsync();
@@ -34,7 +38,11 @@ class AwesomeApp extends Component {
     if (!this.state.isReady) {
       return <AppLoading />;
     }
-    return <AppNavigation />;
+    return (
+      <Provider rootStore={this.rootStore}>
+        <AppNavigation />
+      </Provider>
+    );
   }
 }
 
