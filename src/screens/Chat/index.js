@@ -23,6 +23,12 @@ class _ChatScreen extends Component {
       user: PropTypes.string.isRequired
     })
   };
+
+  clickButton = () => {
+    const { navigation } = this.props;
+
+    navigation.toggleDrawer();
+  };
   render() {
     const { chatStore } = this.props;
     const { user } = chatStore;
@@ -30,10 +36,7 @@ class _ChatScreen extends Component {
       <Container>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent onPress={this.clickButton}>
               <Icon name="menu" />
             </Button>
           </Left>

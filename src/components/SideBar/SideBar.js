@@ -2,7 +2,7 @@ import { Container, Content, ListItem, Text } from "native-base";
 import React, { Component } from "react";
 import { Image } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-const routes = [{ key: "1", route: "Home" }, { key: "2", route: "Profile" }];
+const routes = [{ key: "1", route: "Chat" }, { key: "2", route: "Profile" }];
 
 export default class SideBar extends Component {
   render() {
