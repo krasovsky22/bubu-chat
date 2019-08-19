@@ -1,11 +1,11 @@
+import { Ionicons } from "@expo/vector-icons";
+import AppNavigation from "@screens";
+import { RootStore } from "@stores/RootStore.js";
 import { AppLoading } from "expo";
 import { Asset } from "expo-asset";
 import * as Font from "expo-font";
-import { Ionicons } from "@expo/vector-icons";
-import React, { Component } from "react";
-import AppNavigation from "@screens";
-import { RootStore } from "@stores/RootStore.js";
 import { Provider } from "mobx-react";
+import React, { Component } from "react";
 
 class AwesomeApp extends Component {
   state = {

@@ -11,11 +11,16 @@ import {
   Right,
   Text,
   Title,
-  Row
+  Row,
+  Grid,
+  View
 } from "native-base";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
+import MessageContainer from "./MessageContainer";
+import { SafeAreaView } from "react-navigation";
+import { ScrollView } from "react-native-gesture-handler";
 
 class _ChatScreen extends Component {
   static propTypes = {
@@ -45,13 +50,20 @@ class _ChatScreen extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Container>
-            <Row size={8} style={{ backgroundColor: "pink" }} />
-            <Row size={2} style={{ backgroundColor: "yellow" }}>
+        <Content>
+          <Grid>
+            <ScrollView style={{ flex: 8 }}>
+              <MessageContainer />
+            </ScrollView>
+            <Row
+              style={{
+                backgroundColor: "yellow",
+                flex: 0.1
+              }}
+            >
               <Text>Chat HEre</Text>
             </Row>
-          </Container>
+          </Grid>
         </Content>
       </Container>
     );
