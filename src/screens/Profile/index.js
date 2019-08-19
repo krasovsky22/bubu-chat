@@ -3,7 +3,7 @@ import Profile from "./Profile.js";
 import EditScreenOne from "./EditScreenOne.js";
 import EditScreenTwo from "./EditScreenTwo.js";
 import { createStackNavigator } from "react-navigation";
-export default (DrawNav = createStackNavigator(
+export default createStackNavigator(
   {
     Profile: { screen: Profile },
     EditScreenOne: { screen: EditScreenOne },
@@ -12,4 +12,4 @@ export default (DrawNav = createStackNavigator(
   {
     initialRouteName: "Profile"
   }
-));
+);

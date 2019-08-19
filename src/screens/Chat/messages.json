@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 1,
+    "text": "Message 1",
+    "createdAt": "2016-06-11T17:20:00.000Z",
+    "user": {
+      "_id": 1,
+      "name": "person",
+      "avatar": "https://placeimg.com/140/140/any"
+    }
+  },
+  {
+    "_id": 2,
+    "text": "Message 222",
+    "createdAt": "2016-06-11T17:20:00.000Z",
+    "user": {
+      "_id": 2,
+      "name": "Another Person",
+      "avatar": "https://placeimg.com/140/140/any"
+    }
+  }
+]

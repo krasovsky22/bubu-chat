@@ -1,26 +1,18 @@
+import { inject, observer } from "mobx-react";
 import {
   Body,
   Button,
-  Card,
-  CardItem,
   Container,
   Content,
   Header,
   Icon,
   Left,
   Right,
-  Text,
-  Title,
-  Row,
-  Grid,
-  View
+  Title
 } from "native-base";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { inject, observer } from "mobx-react";
-import MessageContainer from "./MessageContainer";
-import { SafeAreaView } from "react-navigation";
-import { ScrollView } from "react-native-gesture-handler";
+import ChatContainer from "./Container";
 
 class _ChatScreen extends Component {
   static propTypes = {
@@ -50,21 +42,9 @@ class _ChatScreen extends Component {
           </Body>
           <Right />
         </Header>
-        <Content>
-          <Grid>
-            <ScrollView style={{ flex: 8 }}>
-              <MessageContainer />
-            </ScrollView>
-            <Row
-              style={{
-                backgroundColor: "yellow",
-                flex: 0.1
-              }}
-            >
-              <Text>Chat HEre</Text>
-            </Row>
-          </Grid>
-        </Content>
+        <Container>
+          <ChatContainer />
+        </Container>
       </Container>
     );
   }
