@@ -14,12 +14,8 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ChatContainer from "./Container";
 
-class _ChatScreen extends Component {
-  static propTypes = {
-    chatStore: PropTypes.shape({
-      user: PropTypes.string.isRequired
-    })
-  };
+class ChatScreen extends Component {
+  static propTypes = {};
 
   clickButton = () => {
     const { navigation } = this.props;
@@ -27,8 +23,6 @@ class _ChatScreen extends Component {
     navigation.toggleDrawer();
   };
   render() {
-    const { chatStore } = this.props;
-    const { user } = chatStore;
     return (
       <Container>
         <Header>
@@ -38,7 +32,7 @@ class _ChatScreen extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Hello {user}</Title>
+            <Title>Hello User</Title>
           </Body>
           <Right />
         </Header>
@@ -50,6 +44,4 @@ class _ChatScreen extends Component {
   }
 }
 
-export default inject(({ rootStore: { chatStore } }) => ({
-  chatStore
-}))(observer(_ChatScreen));
+export default ChatScreen;

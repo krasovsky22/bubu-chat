@@ -1,25 +1,29 @@
+import { inject, observer } from "mobx-react";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 
-const messages = require("./messages.json");
-
-class ChatContainer extends Component {
-  static propTypes = {};
-
-  state = {
-    messages: messages
+class _ChatContainer extends Component {
+  static propTypes = {
+    messages: PropTypes.array,
+    sendMessage: PropTypes.func.isRequired
   };
 
-  onSend(newMessage) {
-    const { messages } = this.state;
-    this.setState({ messages: GiftedChat.append(messages, newMessage) });
-  }
+  static defaultProps = {
+    messages: []
+  };
+
+  onSend = newMessage => {
+    const { sendMessage } = this.props;
+    sendMessage(newMessage);
+  };
 
   render() {
+    const { messages } = this.props;
+
     return (
       <GiftedChat
-        messages={this.state.messages}
+        messages={messages.toJS()}
         onSend={messages => this.onSend(messages)}
         user={{
           _id: 1
@@ -29,4 +33,13 @@ class ChatContainer extends Component {
   }
 }
 
-export default ChatContainer;
+export default inject(
+  ({
+    rootStore: {
+      chatStore: { messages, sendMessage }
+    }
+  }) => ({
+    messages,
+    sendMessage
+  })
+)(observer(_ChatContainer));
