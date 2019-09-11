@@ -1,10 +1,11 @@
 import SideBar from "@components/SideBar/SideBar.js";
 import React from "react";
-import { createAppContainer, createDrawerNavigator } from "react-navigation";
+import { createAppContainer, createDrawerNavigator, createStackNavigator, createSwitchNavigator } from "react-navigation";
 import ChatScreen from "./Chat";
 import ProfileScreen from "./Profile";
+import AuthScreen from "./Auth";
 
-const AppNavigator = createDrawerNavigator(
+const drawerNavigator = createDrawerNavigator(
   {
     Chat: { screen: ChatScreen },
     ProfileScreen
@@ -17,4 +18,13 @@ const AppNavigator = createDrawerNavigator(
   }
 );
 
-export default createAppContainer(AppNavigator);
+export default createAppContainer(
+  createSwitchNavigator({
+    App: drawerNavigator,
+    Auth: AuthScreen
+  },
+    {
+      initialRouteName: 'Auth'
+    }
+  )
+);

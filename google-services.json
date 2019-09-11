@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "437027636592",
+    "firebase_url": "https://bubu-chat-29627.firebaseio.com",
+    "project_id": "bubu-chat-29627",
+    "storage_bucket": "bubu-chat-29627.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437027636592:android:6a55d194daa86eb81d7bb5",
+        "android_client_info": {
+          "package_name": "example.expo.googlesignin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437027636592-hj76jjf2d3e72qiad64d47jjpa4q7m86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGxNRgsKCwv8Hn-Jk2VmjvmS5ODi369MM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437027636592-hj76jjf2d3e72qiad64d47jjpa4q7m86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

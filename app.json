@@ -5,7 +5,6 @@
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [
-      "ios",
       "android",
       "web"
     ],
@@ -27,6 +26,10 @@
     "androidStatusBar": {
       "barStyle": "light-content",
       "backgroundColor": "#334393"
+    },
+    "android": {
+      "package": "example.expo.googlesignin",
+      "googleServicesFile": "./google-services.json"
     },
     "ios": {
       "supportsTablet": true
